@@ -242,7 +242,7 @@
     async function handleSync() {
         try {
             // 获取推特输入框内容
-            const tweetBox = document.querySelector('[data-testid="tweetTextarea_0"]');
+            const tweetBox = document.querySelector('#react-root > div > div > div.css-175oi2r.r-1f2l425.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div.css-175oi2r.r-14lw9ot.r-jxzhtn.r-1ua6aaf.r-th6na.r-1phboty.r-16y2uox.r-184en5c.r-1abdc3e.r-1lg4w6u.r-f8sm7e.r-13qz1uu.r-1ye8kvj > div > div.css-175oi2r.r-14lw9ot.r-184en5c > div > div.css-175oi2r.r-1h8ys4a > div:nth-child(1) > div > div > div > div.css-175oi2r.r-1iusvr4.r-16y2uox.r-1777fci.r-1h8ys4a.r-1bylmt5.r-13tjlyg.r-7qyjyx.r-1ftll1t > div:nth-child(1) > div > div > div > div > div > div:nth-child(2) > div > div > div > div > div > div > div.css-175oi2r.r-1wbh5a2.r-16y2uox > div > div > div > div > div > div.DraftEditor-editorContainer > div > div > div > div > div');
             if (!tweetBox) throw new Error('未找到推特输入框');
             const content = tweetBox.textContent;
 
@@ -287,7 +287,7 @@
     }
 
     function injectSyncUI() {
-        const tweetBox = document.querySelector('[data-testid="tweetTextarea_0"]');
+        const tweetBox = document.querySelector('#react-root > div > div > div.css-175oi2r.r-1f2l425.r-13qz1uu.r-417010.r-18u37iz > main > div > div > div > div.css-175oi2r.r-14lw9ot.r-jxzhtn.r-1ua6aaf.r-th6na.r-1phboty.r-16y2uox.r-184en5c.r-1abdc3e.r-1lg4w6u.r-f8sm7e.r-13qz1uu.r-1ye8kvj > div > div.css-175oi2r.r-14lw9ot.r-184en5c > div > div.css-175oi2r.r-1h8ys4a > div:nth-child(1) > div > div > div > div.css-175oi2r.r-1iusvr4.r-16y2uox.r-1777fci.r-1h8ys4a.r-1bylmt5.r-13tjlyg.r-7qyjyx.r-1ftll1t > div:nth-child(1) > div > div > div > div > div > div:nth-child(2) > div > div > div > div > div > div > div.css-175oi2r.r-1wbh5a2.r-16y2uox > div > div > div > div > div > div.DraftEditor-editorContainer > div > div > div > div > div');
         if (!tweetBox) return;
 
         const container = document.createElement('div');
@@ -308,7 +308,7 @@
             <button class="sync-button">一键同步</button>
         `;
 
-        const tweetBoxContainer = tweetBox.closest('[data-testid="tweetTextarea_0_container"]');
+        const tweetBoxContainer = tweetBox.closest('div.css-175oi2r.r-1iusvr4.r-16y2uox.r-1777fci.r-1h8ys4a.r-1bylmt5.r-13tjlyg.r-7qyjyx.r-1ftll1t');
         if (tweetBoxContainer) {
             tweetBoxContainer.parentElement.insertBefore(container, tweetBoxContainer.nextSibling);
         }
